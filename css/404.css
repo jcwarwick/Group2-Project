@@ -1,0 +1,47 @@
+body {
+    background-image: url("../images/closedcurtains.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    color: #fff;
+  }
+
+.container {
+  text-align: center;
+}
+
+.error-code {
+  font-size: 6rem;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #f8f4f4;
+  border: none;
+  color:rgb(5, 1, 1);
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #f44336;
+}

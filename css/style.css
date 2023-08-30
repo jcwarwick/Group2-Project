@@ -1,0 +1,80 @@
+body, h1, ul {
+
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the header */
+.header-container {
+    background-color: #000000;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Styling for the menu button */
+#menu-btn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+/* Styling for the popout menu */
+.popout-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.popout-menu.active {
+    display: block;
+}
+
+.popout-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popout-menu li {
+    padding: 0.5rem 1rem;
+}
+
+.popout-menu li a {
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.popout-menu li a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Styling for the search form */
+.movie-form {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.movie-search {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-btn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #000000;
+}
