@@ -1,4 +1,5 @@
 const movieResults = document.getElementById('movie-results');
+const movieTemplate = document.getElementById('movie-template');
 const searchParams = new URLSearchParams(window.location.search);
 const searchTerm = searchParams.get('search');
 
@@ -14,66 +15,20 @@ if (searchTerm !== '') {
   .then(data => {
     var list = data.d;
 
-    list.forEach((item) => {
-      var name = item.l;
-      var poster = item.i.imageUrl;
-      var releaseDate = item.y;
-      var movieBox = document.createElement('div');
-      movieBox.classList.add('bg-black', 'text-white', 'p-4', 'rounded-md', 'shadow-md', 'w-full', 'md:w-1/2', 'lg:w-1/3', 'movie-form');
-   
-      movieBox.innerHTML = `
-        <img src="${poster}" alt="${name}" class="max-w-full h-auto">
-        <h2 class="text-lg font-semibold mt-2">${name}</h2>
-        <p class="mt-1">Release Year: ${releaseDate}</p>
-        <div class="flex items-center mt-2">
-          <span class="mr-1">Your Rating:</span>
-          <div class="flex space-x-1">
-            <button class="star bg-yellow-500 px-2 py-1 rounded-md">
-                <i class="fas fa-star"></i>
-            </button>
-            <button class="star bg-yellow-500 px-2 py-1 rounded-md">
-                <i class="fas fa-star"></i>
-            </button>
-            <button class="star bg-yellow-500 px-2 py-1 rounded-md">
-                <i class="fas fa-star"></i>
-            </button>
-            <button class="star bg-yellow-500 px-2 py-1 rounded-md">
-                <i class="fas fa-star"></i>
-            </button>
-            <button class="star bg-yellow-500 px-2 py-1 rounded-md">
-                <i class="fas fa-star"></i>
-            </button>
-          </div>
-        </div>
-        <section class="mt-4 bg-black text-white p-4 rounded-md shadow-md">
-        <h2 class="text-lg font-semibold">Write a Review</h2>
-        <form class="mt-2">
-            <label class="block" for="username">Your Name:</label>
-            <input type="text" id="username" name="username" class="w-full px-3 py-2 border rounded-md">
-            <label class="block mt-2" for="rating">Rating:</label>
-            <div class="flex space-x-1">
-                <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                    <i class="fas fa-star"></i>
-                </button>
-                <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                    <i class="fas fa-star"></i>
-                </button>
-                <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                    <i class="fas fa-star"></i>
-                </button>
-                <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                    <i class="fas fa-star"></i>
-                </button>
-                <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                    <i class="fas fa-star"></i>
-                </button>
-            </div>
-            <label class="block mt-2" for="review">Your Review:</label>
-            <textarea id="review" name="review" class="w-full px-3 py-2 border rounded-md"></textarea>
-            <button type="submit" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md">Submit Review</button>
-        </form>
-    </section>
-      `;
+     list.forEach((item) => {
+            var name = item.l;
+            var poster = item.i.imageUrl;
+            var releaseDate = item.y;
+
+            const movieBox = document.importNode(movieTemplate.content, true);
+            const img = movieBox.querySelector('img');
+            const title = movieBox.querySelector('h2');
+            const releaseYear = movieBox.querySelector('p');
+
+            img.src = poster;
+            img.alt = name;
+            title.textContent = name;
+            releaseYear.textContent = `Release Year: ${releaseDate}`;
       
       movieResults.appendChild(movieBox);
 
