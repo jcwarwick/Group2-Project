@@ -1,5 +1,8 @@
 body{
-    background-image: url('../images/empty-theater.jpg')
+    background-image: url('../images/empty-theater.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .center-flex {
