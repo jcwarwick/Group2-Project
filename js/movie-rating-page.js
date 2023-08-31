@@ -1,8 +1,4 @@
 const movieResults = document.getElementById('movie-results');
-const stars = document.querySelectorAll('.star');
-
-
-
 const searchParams = new URLSearchParams(window.location.search);
 const searchTerm = searchParams.get('search');
 
@@ -21,30 +17,30 @@ if (searchTerm !== '') {
     list.forEach((item) => {
       var name = item.l;
       var poster = item.i.imageUrl;
+      var releaseDate = item.y;
       var movieBox = document.createElement('div');
       movieBox.classList.add('bg-black', 'text-white', 'p-4', 'rounded-md', 'shadow-md', 'w-full', 'md:w-1/2', 'lg:w-1/3', 'movie-form');
-      
-      // Construct movie content
+   
       movieBox.innerHTML = `
         <img src="${poster}" alt="${name}" class="max-w-full h-auto">
         <h2 class="text-lg font-semibold mt-2">${name}</h2>
-        <p class="mt-1">Release Year: 20XX</p>
+        <p class="mt-1">Release Year: ${releaseDate}</p>
         <div class="flex items-center mt-2">
           <span class="mr-1">Your Rating:</span>
           <div class="flex space-x-1">
-            <button class="star bg-yellow-500 text-white px-2 py-1 rounded-md star">
+            <button class="star bg-yellow-500 px-2 py-1 rounded-md">
                 <i class="fas fa-star"></i>
             </button>
-            <button class="star bg-yellow-500 text-white px-2 py-1 rounded-md">
+            <button class="star bg-yellow-500 px-2 py-1 rounded-md">
                 <i class="fas fa-star"></i>
             </button>
-            <button class="star bg-yellow-500 text-white px-2 py-1 rounded-md">
+            <button class="star bg-yellow-500 px-2 py-1 rounded-md">
                 <i class="fas fa-star"></i>
             </button>
-            <button class="star bg-yellow-500 text-white px-2 py-1 rounded-md">
+            <button class="star bg-yellow-500 px-2 py-1 rounded-md">
                 <i class="fas fa-star"></i>
             </button>
-            <button class="star bg-yellow-500 text-white px-2 py-1 rounded-md">
+            <button class="star bg-yellow-500 px-2 py-1 rounded-md">
                 <i class="fas fa-star"></i>
             </button>
           </div>
@@ -56,19 +52,19 @@ if (searchTerm !== '') {
             <input type="text" id="username" name="username" class="w-full px-3 py-2 border rounded-md">
             <label class="block mt-2" for="rating">Rating:</label>
             <div class="flex space-x-1">
-                <button class="bg-red-900 text-white px-2 py-1 rounded-md">
+                <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
                     <i class="fas fa-star"></i>
                 </button>
-                <button class="bg-red-900 text-white px-2 py-1 rounded-md">
+                <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
                     <i class="fas fa-star"></i>
                 </button>
-                <button class="bg-red-900 text-white px-2 py-1 rounded-md">
+                <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
                     <i class="fas fa-star"></i>
                 </button>
-                <button class="bg-red-900 text-white px-2 py-1 rounded-md">
+                <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
                     <i class="fas fa-star"></i>
                 </button>
-                <button class="bg-red-900 text-white px-2 py-1 rounded-md">
+                <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
                     <i class="fas fa-star"></i>
                 </button>
             </div>
@@ -81,22 +77,11 @@ if (searchTerm !== '') {
       
       movieResults.appendChild(movieBox);
 
-      stars.forEach((star, index) => {
-        star.addEventListener('click', () => {
-          // Set the clicked star and all previous stars to a selected state
-          for (let i = 0; i <= index; i++) {
-            stars[i].classList.add('selected');
-          }
-      
-          // Reset the following stars to an unselected state
-          for (let i = index + 1; i < stars.length; i++) {
-            stars[i].classList.remove('selected');
-          }
-        });
-      });
+
     });
   })
   .catch(err => {
     console.error(err);
   });
 }
+

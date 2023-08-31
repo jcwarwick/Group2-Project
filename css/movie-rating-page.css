@@ -1,3 +1,25 @@
 body{
     background-image: url('../images/empty-theater.jpg')
 }
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+#username, #review{
+    color: black
+}
+
+.star {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ffffff; 
+    cursor: pointer;
+  }
+  
+.star:checked {
+    color: #FFD700; /* Change the color for selected stars */
+}
