@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OH, I've Seen That!</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <nav class="navBar" id="nav-bar">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./movie-history-page.html">Movies I've Watched</a></li>
+        <li><a href="./movie-future-page.html">Movies I Want to See</a></li>
+        <li><a href="#random">Tell Me What to Watch</a></li>
+    </nav>
     <div class="main-container">
-        <header class="header-container">
-            <h1>OH, I've Seen That!</h1>
-        </header>
-        <div class="menu-container">
-            <button type="button" id="menu-btn">Menu</button>
-            <div id="menu-items" class="popout-menu">
-                <ul>
-                    <li><a href="#">Movies I've Seen Before</a></li>
-                    <li><a href="#">Movies I Want to See</a></li>
-                    <li><a href="#">Tell Me What to Watch</a></li>
-                </ul>
+        <div class="main-container">
+        <header class="bg-charcoal text-white text-center py-4">
+            <div class="bg-red-500 rounded-full py-1 px-4 inline-block">
+                <h1 class="text-2xl font-semibold">Oh,</h1>
             </div>
+            <p class="mt-2">I've seen that - Rate and review your favorite movies!</p>
+        </header>
         </div>
         <div>
             <div class="search-container">
@@ -33,7 +36,6 @@
     <script src="./js/style.js"></script>
 </body>
 </html>
-
 
 
 
