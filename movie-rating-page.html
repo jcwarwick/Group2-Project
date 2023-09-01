@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Oh, I've seen that - Movie Rating App</title>
     <link rel="stylesheet" href="./css/movie-rating-page.css">
 </head>
@@ -16,6 +17,12 @@
         <p class="mt-2">I've seen that - Rate and review your favorite movies!</p>
     </header>
     
+    <form class="movie-form">
+        <input type="text" id="searching" placeholder="Enter a Movie" class="movie-search">
+        <button type="button" class="search-btn">Search Movies!</button>
+    </form>
+
+
     <main class="max-w-6xl mx-auto p-4">
         <section class="flex flex-wrap gap-4 center-flex" id="movie-results">
             <template id="movie-template">
@@ -45,31 +52,35 @@
                       </div>
                       <section class="mt-4 bg-black text-white p-4 rounded-md shadow-md">
                       <h2 class="text-lg font-semibold">Write a Review</h2>
-                      <form class="mt-2">
+                      
+                      <form class="mt-2" id="review-form">
                           <label class="block" for="username">Your Name:</label>
                           <input type="text" id="username" name="username" class="w-full px-3 py-2 border rounded-md">
-                          <label class="block mt-2" for="rating">Rating:</label>
-                          <div class="flex space-x-1">
-                              <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                                  <i class="fas fa-star"></i>
-                              </button>
-                              <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                                  <i class="fas fa-star"></i>
-                              </button>
-                              <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                                  <i class="fas fa-star"></i>
-                              </button>
-                              <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                                  <i class="fas fa-star"></i>
-                              </button>
-                              <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                                  <i class="fas fa-star"></i>
-                              </button>
-                          </div>
+                      </form>
+                      <span class="mr-1">Rating:</span>
+                        <div class="flex space-x-1">
+                            <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                        <form class="mt-2" id="review-form">
                           <label class="block mt-2" for="review">Your Review:</label>
                           <textarea id="review" name="review" class="w-full px-3 py-2 border rounded-md"></textarea>
-                          <button type="submit" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md">Submit Review</button>
-                      </form>
+                        </form>
+                      
+                      <button type="submit" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md submit-btn" id="submit-review">Submit Review</button>
                 </div>
             </template>
 
