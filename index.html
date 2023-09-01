@@ -10,14 +10,27 @@
 </head>
 <body>
     <nav class="navBar" id="nav-bar">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#seen">Movie's I've Watched</a></li>
-        <li><a href="#want">Movie's I Want to See</a></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./movie-history-page.html">Movies I've Watched</a></li>
+        <li><a href="./movie-future-page.html">Movies I Want to See</a></li>
         <li><a href="#random">Tell Me What to Watch</a></li>
     </nav>
-    <header class="text-white text-center py-4">
-        <div class="bg-red-500 rounded-full py-1 px-4 inline-block">
-            <h1 class="text-2xl font-semibold">Oh,</h1>
+    <div class="main-container">
+        <div class="main-container">
+        <header class="bg-charcoal text-white text-center py-4">
+            <div class="bg-red-500 rounded-full py-1 px-4 inline-block">
+                <h1 class="text-2xl font-semibold">Oh,</h1>
+            </div>
+            <p class="mt-2">I've seen that - Rate and review your favorite movies!</p>
+        </header>
+        </div>
+        <div>
+            <div class="search-container">
+                <form class="movie-form">
+                    <input type="text" id="searching" placeholder="Enter a Movie" class="movie-search">
+                    <button type="button" class="search-btn">Search Movies!</button>
+                </form>
+            </div>
         </div>
         <p class="mt-2">I've seen that - Rate and review your favorite movies!</p>
     </header>
