@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById('searching');
     const searchButton = document.querySelector(".search-btn");
 
-    menuButton.addEventListener("click", function() {
-        menuItems.classList.toggle("active");
-    });
+   // menuButton.addEventListener("click", function() {
+     //   menuItems.classList.toggle("active");
+   // });
 
     searchButton.addEventListener("click", function(event) {
         event.preventDefault();
