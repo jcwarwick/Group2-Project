@@ -29,7 +29,7 @@ if (searchTerm !== '') {
             img.alt = name;
             title.textContent = name;
             releaseYear.textContent = `Release Year: ${releaseDate}`;
-      
+      console.log(data);
       movieResults.appendChild(movieBox);
 
 
@@ -39,4 +39,38 @@ if (searchTerm !== '') {
     console.error(err);
   });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const searchInput = document.getElementById('searching');
+  const searchButton = document.querySelector(".search-btn");
+
+  searchButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      const searchingInput = searchInput.value;
+      if (searchingInput.trim() !== "") {
+         window.location.href = `movie-rating-page.html?search=${encodeURIComponent(searchingInput)}`;
+     
+      }
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const submitInput = document.getElementById('submit-review');
+  const submitButton = document.querySelector(".submit-btn");
+
+  submitButton.addEventListener("click", function(event) {
+      event.preventDefault();
+
+      alert("Review submitted successfully!");
+    
+      alert("Please fill in both the username and review fields.");
+      console.log('is this working')
+      
+  });
+});
+
+
+
 

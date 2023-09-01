@@ -26,3 +26,24 @@ body{
 .star:checked {
     color: #FFD700; /* Change the color for selected stars */
 }
+.movie-form {
+  text-align: center;
+  margin-top: 1rem;
+}
+.movie-search {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.search-btn {
+  background-color: rgba(239,68,68);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: rgb(255, 97, 97);
+}
