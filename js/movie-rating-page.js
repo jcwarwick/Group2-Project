@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
       alert("Review submitted successfully!");
     
       alert("Please fill in both the username and review fields.");
-      console.log('no shot bro')
+      console.log('is this working')
       
   });
 });
