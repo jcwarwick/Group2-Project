@@ -5,6 +5,32 @@ body{
     background-size: cover;
 }
 
+body {
+  background-color: black;
+  color:white;
+}
+.navBar {
+  overflow: hidden;
+  background-color: darkred;
+  height:50px;
+  padding: 5px;
+  display:flex;
+  flex: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.navBar li {
+  list-style: none;
+  float: left;
+}
+.navBar li a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
 .center-flex {
     display: flex;
     justify-content: center;
@@ -24,7 +50,7 @@ body{
   }
   
 .star:checked {
-    color: #FFD700; /* Change the color for selected stars */
+    color: #FFD700;
 }
 .movie-form {
   text-align: center;
@@ -46,4 +72,18 @@ body{
 
 .search-btn:hover {
   background-color: rgb(255, 97, 97);
+}
+
+
+
+.submit-btn {
+  background-color: darkred;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: rgb(177, 66, 66);
 }

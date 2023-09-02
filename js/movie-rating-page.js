@@ -29,7 +29,7 @@ if (searchTerm !== '') {
             img.alt = name;
             title.textContent = name;
             releaseYear.textContent = `Release Year: ${releaseDate}`;
-      console.log(data);
+      
       movieResults.appendChild(movieBox);
 
 
@@ -44,32 +44,50 @@ document.addEventListener("DOMContentLoaded", function() {
   const searchInput = document.getElementById('searching');
   const searchButton = document.querySelector(".search-btn");
 
+
   searchButton.addEventListener("click", function(event) {
-      event.preventDefault();
-      const searchingInput = searchInput.value;
-      if (searchingInput.trim() !== "") {
-         window.location.href = `movie-rating-page.html?search=${encodeURIComponent(searchingInput)}`;
-     
-      }
+    event.preventDefault();
+    const searchingInput = searchInput.value;
+    if (searchingInput.trim() !== "") {
+       window.location.href = `movie-rating-page.html?search=${encodeURIComponent(searchingInput)}`;
+    }
+  })
   });
-});
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
-  const submitInput = document.getElementById('submit-review');
-  const submitButton = document.querySelector(".submit-btn");
+ 
 
-  submitButton.addEventListener("click", function(event) {
+  movieResults.addEventListener("click", function(event) {
+    if (event.target.id === "submit-review") {
       event.preventDefault();
+      const form = event.target.closest("form");
+      if (form) {
+        const reviewTextarea = form.querySelector("#review");
+        const usersName = form.querySelector("#username");
 
-      alert("Review submitted successfully!");
-    
-      alert("Please fill in both the username and review fields.");
-      console.log('is this working')
-      
+        if (reviewTextarea && usersName) {
+          const userReview = {
+            username: usersName.value,
+            reviewTextarea: reviewTextarea.value
+          };
+
+          if (userReview.username !== null && userReview.username.trim() !== '') {
+            localStorage.setItem('userReview', JSON.stringify(userReview));
+            alert('Your review has been stored to the local storage');
+            
+          } else {
+            alert('Please enter Your name and Your review');
+          }
+        } else {
+          console.log('Elements not found in the form.');
+        }
+      }
+    }
   });
+
+  
 });
+
 
 
 
