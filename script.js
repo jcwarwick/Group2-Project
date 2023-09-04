@@ -1,24 +1,26 @@
 //rating star buttons. Only the first star is "clicking"
-const ratingButton = document.getElementsByClassName("flex space-x-1")
-const reviewButton = document.getElementsByClassName("mt-2 bg-yellow-500 text-white px-3 py-1 rounded-md")
+const ratingButton = document.getElementsByClassName("bg-yellow-500 text-white px-2 py-1 rounded-md")
+//const reviewButton = document.getElementsByClassName("mt-2 bg-yellow-500 text-white px-3 py-1 rounded-md")
 
-//const button = document.querySelector('button');
-ratingButton.addEventListener('click', function(){
-    
-}
-);
+button = document.querySelector('button');
+button.addEventListener('click', () => {
+  console.log('Button clicked!');
+});
 
 
-function onButtonClick(ratingButton) {
 
-    console.log('rating Button clicked!');
-  }
+
+
+//function onButtonClick(ratingButton) {
+
+    //console.log('rating Button clicked!');
+  //}
   
  
   //Write a review button
-function onButtonClick(reviewButton) {
+//function onButtonClick(reviewButton) {
 
-    console.log('review Button clicked!');
-  }
+    //console.log('review Button clicked!');
+  //}
   
-
+  
