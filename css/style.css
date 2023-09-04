@@ -1,80 +1,81 @@
 body, h1, ul {
-
     margin: 0;
     padding: 0;
 }
 
-/* Basic styling for the header */
+body {
+    background-image: url("../images/popcorn.gif");
+    background-repeat: no-repeat;
+    background-size:100%;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+.main-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 .header-container {
-    background-color: #000000;
-    color: white;
-    padding: 1rem;
+    flex: 1;
     text-align: center;
 }
 
-/* Styling for the menu button */
-#menu-btn {
-    background-color: #000000;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
+.header-container h1 {
+    color: #e74c3c;
 }
 
-/* Styling for the popout menu */
-.popout-menu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+.search-container {
+    flex: 1;
+    text-align: center;
+    padding-top: 20px;
 }
-
-.popout-menu.active {
-    display: block;
-}
-
-.popout-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.popout-menu li {
-    padding: 0.5rem 1rem;
-}
-
-.popout-menu li a {
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.2s ease;
-}
-
-.popout-menu li a:hover {
-    background-color: #f2f2f2;
-}
-
-/* Styling for the search form */
 .movie-form {
-    text-align: center;
-    margin-top: 1rem;
+    display: inline-block;
 }
-
 .movie-search {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70%;
+    background-color: #333;
+    color: #fff;
 }
-
 .search-btn {
-    background-color: #000000;
-    color: white;
+    background-color: #e74c3c;
     border: none;
-    padding: 0.5rem 1rem;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+.search-btn:hover {
+    background-color: #c0392b;
 }
 
-.search-btn:hover {
-    background-color: #000000;
+.navBar {
+    overflow: hidden;
+    background-color: darkred;
+    height:50px;
+    padding: 5px;
+    display:flex;
+    flex: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.navBar li {
+    list-style: none;
+    float: left;
+}
+.navBar li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 20px;
 }

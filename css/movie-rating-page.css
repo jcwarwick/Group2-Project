@@ -1,3 +1,49 @@
 body{
-    background-image: url('../images/empty-theater.jpg')
+    background-image: url('../images/empty-theater.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+#username, #review{
+    color: black
+}
+
+.star {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ffffff; 
+    cursor: pointer;
+  }
+  
+.star:checked {
+    color: #FFD700; /* Change the color for selected stars */
+}
+.movie-form {
+  text-align: center;
+  margin-top: 1rem;
+}
+.movie-search {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.search-btn {
+  background-color: rgba(239,68,68);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: rgb(255, 97, 97);
 }
