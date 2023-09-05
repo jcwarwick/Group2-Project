@@ -1,3 +1,4 @@
+
 //rating star buttons. Only the first star is "clicking"
 const ratingButton = document.getElementsByClassName("bg-yellow-500 text-white px-2 py-1 rounded-md")
 //const reviewButton = document.getElementsByClassName("mt-2 bg-yellow-500 text-white px-3 py-1 rounded-md")
