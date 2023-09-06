@@ -1,17 +1,19 @@
+:root {
+  --main: darkred;
+  --mainHover: rgb(177, 66, 66); 
+}
 body{
     background-image: url('../images/empty-theater.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: black;
+    color:white;
 }
 
-body {
-  background-color: black;
-  color:white;
-}
 .navBar {
   overflow: hidden;
-  background-color: darkred;
+  background-color: var(--main);
   height:50px;
   padding: 5px;
   display:flex;
@@ -63,7 +65,7 @@ body {
 }
 
 .search-btn {
-  background-color: rgba(239,68,68);
+  background-color: var(--main);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -71,13 +73,13 @@ body {
 }
 
 .search-btn:hover {
-  background-color: rgb(255, 97, 97);
+  background-color: var(--mainHover);
 }
 
 
 
 .submit-btn {
-  background-color: darkred;
+  background-color: var(--main);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -85,5 +87,17 @@ body {
 }
 
 .submit-btn:hover {
-  background-color: rgb(177, 66, 66);
+  background-color: var(--mainHover);
+}
+
+.wLater-btn {
+  background-color: var(--main);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.wLater-btn:hover {
+  background-color: var(--mainHover);
 }

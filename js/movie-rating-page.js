@@ -13,22 +13,23 @@ if (searchTerm !== '') {
   })
   .then(response => response.json())
   .then(data => {
+    console.log(data);
     var list = data.d;
 
      list.forEach((item) => {
-            var name = item.l;
-            var poster = item.i.imageUrl;
-            var releaseDate = item.y;
+      var name = item.l;
+      var poster = item.i.imageUrl;
+      var releaseDate = item.y;
 
-            const movieBox = document.importNode(movieTemplate.content, true);
-            const img = movieBox.querySelector('img');
-            const title = movieBox.querySelector('h2');
-            const releaseYear = movieBox.querySelector('p');
+      const movieBox = document.importNode(movieTemplate.content, true);
+      const img = movieBox.querySelector('img');
+      const title = movieBox.querySelector('h2');
+      const releaseYear = movieBox.querySelector('p');
 
-            img.src = poster;
-            img.alt = name;
-            title.textContent = name;
-            releaseYear.textContent = `Release Year: ${releaseDate}`;
+      img.src = poster;
+      img.alt = name;
+      title.textContent = name;
+      releaseYear.textContent = `Release Year: ${releaseDate}`;
       
       movieResults.appendChild(movieBox);
 
@@ -39,6 +40,9 @@ if (searchTerm !== '') {
     console.error(err);
   });
 }
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
   const searchInput = document.getElementById('searching');
@@ -87,6 +91,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
   
 });
+
+
+const trailerUrl = 'https://campertrailerpro.p.rapidapi.com/SearchMovies';
+const trailerOptions = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '0578e63d4amshee76984ae253556p1fb441jsn418e7dce4027',
+		'X-RapidAPI-Host': 'campertrailerpro.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
 
 
 
