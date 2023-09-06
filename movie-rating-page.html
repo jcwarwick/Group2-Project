@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="./css/movie-rating-page.css">
 </head>
 <body class="bg-crimson-red">
+
+
+    <nav class="navBar" id="nav-bar">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./movie-history-page.html">Movies I've Watched</a></li>
+        <li><a href="./movie-future-page.html">Movies I Want to See</a></li>
+        <li><a href="#random">Tell Me What to Watch</a></li>
+    </nav>
+
+
     <header class="bg-charcoal text-white text-center py-4">
         <div class="bg-red-500 rounded-full py-1 px-4 inline-block">
             <h1 class="text-2xl font-semibold">Oh,</h1>
@@ -50,14 +60,15 @@
                           </button>
                         </div>
                       </div>
+                      <button type="button" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md wLater-btn" id="watch-later">Watch Later</button>
                       <section class="mt-4 bg-black text-white p-4 rounded-md shadow-md">
                       <h2 class="text-lg font-semibold">Write a Review</h2>
                       
-                      <form class="mt-2" id="review-form">
+                    <form class="mt-2 submit-form">
                           <label class="block" for="username">Your Name:</label>
                           <input type="text" id="username" name="username" class="w-full px-3 py-2 border rounded-md">
-                      </form>
-                      <span class="mr-1">Rating:</span>
+                      
+                        <span class="mr-1">Rating:</span>
                         <div class="flex space-x-1">
                             <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
                                 <i class="fas fa-star"></i>
@@ -75,17 +86,18 @@
                                 <i class="fas fa-star"></i>
                             </button>
                         </div>
-                        <form class="mt-2" id="review-form">
+                        
                           <label class="block mt-2" for="review">Your Review:</label>
-                          <textarea id="review" name="review" class="w-full px-3 py-2 border rounded-md"></textarea>
-                        </form>
+                          <input id="review" name="review" class="w-full px-3 py-2 border rounded-md">
+                          <button type="button" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md submit-btn" id="submit-review">Submit Review</button>
+                    </form>
                       
-                      <button type="submit" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md submit-btn" id="submit-review">Submit Review</button>
+                      
                 </div>
             </template>
-
+           
         </section>
-            
+        
     </main>
     
     <footer class="text-center py-4">
