@@ -4,24 +4,27 @@ body, h1, ul {
 }
 
 body {
-    background-image: url("../images/popcorn.gif");
+    background-image: url(../images/empty-theater.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size:100%;
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
 }
+
 .main-container {
+    background-repeat: no-repeat;
     display: flex;
-    text-align: center;
-    justify-content: center;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
     margin: 0 auto;
     padding: 20px;
     background-color: #000000;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
 .header-container {
-    flex: 1;
     text-align: center;
 }
 
@@ -30,13 +33,15 @@ body {
 }
 
 .search-container {
-    flex: 1;
+    background-color: #fff;
     text-align: center;
     padding-top: 20px;
 }
+
 .movie-form {
     display: inline-block;
 }
+
 .movie-search {
     padding: 8px;
     border: 1px solid #ccc;
@@ -45,6 +50,7 @@ body {
     background-color: #333;
     color: #fff;
 }
+
 .search-btn {
     background-color: #e74c3c;
     border: none;
@@ -54,6 +60,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .search-btn:hover {
     background-color: #c0392b;
 }
@@ -61,17 +68,18 @@ body {
 .navBar {
     overflow: hidden;
     background-color: darkred;
-    height:50px;
+    height: 50px;
     padding: 5px;
-    display:flex;
-    flex: row;
+    display: flex;
+    flex-direction: row; /* Ensure the navigation items are in a row */
     justify-content: space-around;
     align-items: center;
 }
+
 .navBar li {
     list-style: none;
-    float: left;
 }
+
 .navBar li a {
     text-decoration: none;
     color: white;
