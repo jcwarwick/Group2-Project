@@ -1,8 +1,36 @@
+:root {
+  --main: darkred;
+  --mainHover: rgb(177, 66, 66); 
+}
 body{
     background-image: url('../images/empty-theater.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: black;
+    color:white;
+}
+
+.navBar {
+  overflow: hidden;
+  background-color: var(--main);
+  height:50px;
+  padding: 5px;
+  display:flex;
+  flex: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.navBar li {
+  list-style: none;
+  float: left;
+}
+.navBar li a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 20px;
 }
 
 .center-flex {
@@ -24,7 +52,7 @@ body{
   }
   
 .star:checked {
-    color: #FFD700; /* Change the color for selected stars */
+    color: #FFD700;
 }
 .movie-form {
   text-align: center;
@@ -37,7 +65,7 @@ body{
 }
 
 .search-btn {
-  background-color: rgba(239,68,68);
+  background-color: var(--main);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -45,5 +73,31 @@ body{
 }
 
 .search-btn:hover {
-  background-color: rgb(255, 97, 97);
+  background-color: var(--mainHover);
+}
+
+
+
+.submit-btn {
+  background-color: var(--main);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: var(--mainHover);
+}
+
+.wLater-btn {
+  background-color: var(--main);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.wLater-btn:hover {
+  background-color: var(--mainHover);
 }
