@@ -26,3 +26,21 @@ generateBtn.addEventListener("click", () => {
     const randomSnack = generateRandomSnack();
     resultDiv.textContent = `Your random snack is: ${randomSnack}`;
 });
+
+
+const url = 'https://the-cocktail-db.p.rapidapi.com/search.php?s=vodka';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '0578e63d4amshee76984ae253556p1fb441jsn418e7dce4027',
+		'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
