@@ -23,6 +23,7 @@ body {
     margin-top: 5px;
     font-size: 20px;
 }
+
 :root {
     --main: darkred;
     --mainHover: rgb(177, 66, 66); 
@@ -64,3 +65,4 @@ body {
       flex-wrap: wrap;
     }
   
+
