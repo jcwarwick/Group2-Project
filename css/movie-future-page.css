@@ -23,3 +23,18 @@ body {
     margin-top: 5px;
     font-size: 20px;
 }
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+#username, #review{
+    color: black
+}
+
+.movie-form {
+    text-align: center;
+    margin-top: 1rem;
+  }
