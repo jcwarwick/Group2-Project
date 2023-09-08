@@ -14,9 +14,9 @@
 
     <nav class="navBar" id="nav-bar">
         <li><a href="./index.html">Home</a></li>
-        <li><a href="./movie-history-page.html">Movies I've Watched</a></li>
-        <li><a href="./movie-future-page.html">Movies I Want to See</a></li>
-        <li><a href="#random">Tell Me What to Watch</a></li>
+        <li><a href="./movie-history-page.html">Oh, I've Seen That</a></li>
+        <li><a href="./movie-future-page.html">Oh, I Want to See That</a></li>
+        <li><a href="./snack-rando.html">Oh, Lets Have A Drink</a></li>
     </nav>
 
 
@@ -36,26 +36,26 @@
     <main class="max-w-6xl mx-auto p-4">
         <section class="flex flex-wrap gap-4 center-flex" id="movie-results">
             <template id="movie-template">
-                <div class="bg-black text-white p-4 rounded-md shadow-md w-full md:w-1/2 lg:w-1/3 movie-form">
+                <div class="bg-black text-white p-4 rounded-md shadow-md w-full md:w-1/2 lg:w-1/3 movie-form" id="savedTemplate">
                     <img src="" alt="" class="max-w-full h-auto">
                     <h2 class="text-lg font-semibold mt-2"></h2>
                     <p class="mt-1">Release Year: </p>
                     <div class="flex items-center mt-2">
                         <span class="mr-1">Your Rating:</span>
                         <div class="flex space-x-1">
-                          <button class="star bg-yellow-500 px-2 py-1 rounded-md">
+                          <button class="rating-star px-2 py-1 rounded-md" data-value="1">
                               <i class="fas fa-star"></i>
                           </button>
-                          <button class="star bg-yellow-500 px-2 py-1 rounded-md">
+                          <button class="rating-star px-2 py-1 rounded-md" data-value="2">
                               <i class="fas fa-star"></i>
                           </button>
-                          <button class="star bg-yellow-500 px-2 py-1 rounded-md">
+                          <button class="rating-star px-2 py-1 rounded-md" data-value="3">
                               <i class="fas fa-star"></i>
                           </button>
-                          <button class="star bg-yellow-500 px-2 py-1 rounded-md">
+                          <button class="rating-star px-2 py-1 rounded-md" data-value="4">
                               <i class="fas fa-star"></i>
                           </button>
-                          <button class="star bg-yellow-500 px-2 py-1 rounded-md">
+                          <button class="rating-star px-2 py-1 rounded-md" data-value="5">
                               <i class="fas fa-star"></i>
                           </button>
                         </div>
@@ -65,37 +65,15 @@
                       <h2 class="text-lg font-semibold">Write a Review</h2>
                       
                     <form class="mt-2 submit-form">
-                          <label class="block" for="username">Your Name:</label>
-                          <input type="text" id="username" name="username" class="w-full px-3 py-2 border rounded-md">
-                      
-                        <span class="mr-1">Rating:</span>
-                        <div class="flex space-x-1">
-                            <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                                <i class="fas fa-star"></i>
-                            </button>
-                            <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                                <i class="fas fa-star"></i>
-                            </button>
-                            <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                                <i class="fas fa-star"></i>
-                            </button>
-                            <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                                <i class="fas fa-star"></i>
-                            </button>
-                            <button class="star bg-red-900 text-white px-2 py-1 rounded-md">
-                                <i class="fas fa-star"></i>
-                            </button>
-                        </div>
-                        
                           <label class="block mt-2" for="review">Your Review:</label>
-                          <input id="review" name="review" class="w-full px-3 py-2 border rounded-md">
+                          <input id="review" name="review" class="w-full px-3 py-2 border rounded-md extended-textarea">
                           <button type="button" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md submit-btn" id="submit-review">Submit Review</button>
                     </form>
                       
                       
                 </div>
             </template>
-           
+            
         </section>
         
     </main>

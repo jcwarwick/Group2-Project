@@ -30,7 +30,7 @@ if (searchTerm !== '') {
       img.alt = name;
       title.textContent = name;
       releaseYear.textContent = `Release Year: ${releaseDate}`;
-      
+
       movieResults.appendChild(movieBox);
 
 
@@ -67,24 +67,22 @@ document.addEventListener("DOMContentLoaded", function() {
       const form = event.target.closest("form");
       if (form) {
         const reviewTextarea = form.querySelector("#review");
-        const usersName = form.querySelector("#username");
 
-        if (reviewTextarea && usersName) {
+    
+
+        if (reviewTextarea) {
           const userReview = {
-            username: usersName.value,
             reviewTextarea: reviewTextarea.value
           };
 
-          if (userReview.username !== null && userReview.username.trim() !== '') {
+          if (userReview.reviewTextarea !== null && userReview.reviewTextarea.trim() !== '') {
             localStorage.setItem('userReview', JSON.stringify(userReview));
-            alert('Your review has been stored to the local storage');
-            
-          } else {
-            alert('Please enter Your name and Your review');
-          }
-        } else {
-          console.log('Elements not found in the form.');
-        }
+
+        
+          
+  
+          } 
+        } 
       }
     }
   });
@@ -93,22 +91,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-//const trailerUrl = 'https://campertrailerpro.p.rapidapi.com/SearchMovies';
-//const trailerOptions = {
-	//method: 'GET',
-	//headers: {
-		//'X-RapidAPI-Key': '0578e63d4amshee76984ae253556p1fb441jsn418e7dce4027',
-		//'X-RapidAPI-Host': 'campertrailerpro.p.rapidapi.com'
-	//}
-//};
 
-//try {
-	//const response = await fetch(url, options);
-	//const result = await response.text();
-	//console.log(result);
-//} catch (error) {
-	//console.error(error);
-//}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  movieResults.addEventListener("click", function(event) {
+    if (event.target.classList.contains("rating-star")) {
+      const clickedStar = event.target;
+      const starButtons = clickedStar.parentElement.querySelectorAll(".rating-star");
+
+      starButtons.forEach(function(starButton) {
+        starButton.classList.remove("starChecked");
+      });
+
+      clickedStar.classList.add("starChecked");
+    }
+  });
+});
+
+
+
 
 
 
