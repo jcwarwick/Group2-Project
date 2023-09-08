@@ -23,3 +23,44 @@ body {
     margin-top: 5px;
     font-size: 20px;
 }
+:root {
+    --main: darkred;
+    --mainHover: rgb(177, 66, 66); 
+  }
+  body{
+      background-image: url('../images/empty-theater.jpg');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: black;
+      color:white;
+  }
+  
+  .navBar {
+    overflow: hidden;
+    background-color: var(--main);
+    height:50px;
+    padding: 5px;
+    display:flex;
+    flex: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .navBar li {
+    list-style: none;
+    float: left;
+  }
+  .navBar li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  
+  .center-flex {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
