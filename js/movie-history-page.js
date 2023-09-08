@@ -1,30 +1,16 @@
-var movieTitle = document.getElementById("movie-title");
-var movieReview = document.getElementById("movie-review");
-var saveBtn = document.getElementById("save-btn");
 
+var savedReview = JSON.parse(localStorage.getItem("userReview"));
+var savedTemplate = localStorage.getItem('savedTemplateId');
 
+if (savedReview) {
 
-document.addEventListener("DOMContentLoaded", function() {
-    saveBtn.addEventListener("click", function(event) { 
-        function event(){
-            var title = movieTitle.value;
-            var review = movieReview.value;
-            localStorage.getItem("movie", title);
-            localStorage.getItem("review", review);
+  var reviewElement = document.getElementById("review");
+  var movieResults = document.getElementById('movie-results');
 
-            console.log("Review saved!");
-}})})
+  reviewElement.textContent = savedReview.reviewTextarea;
+  
+  
+}
 
-
-
-
-
-
-
-
-
-
-
-    
 
 
