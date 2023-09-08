@@ -1,6 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-image: url(../images/empty-theater.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -10,7 +13,7 @@ body {
     max-width: 400px;
     margin: 100px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #b5b5b5;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
@@ -57,6 +60,7 @@ p {
     flex-direction: row; /* Ensure the navigation items are in a row */
     justify-content: space-around;
     align-items: center;
+   
 }
 
 .navBar li {

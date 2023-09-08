@@ -45,3 +45,26 @@ body {
 .button:hover {
   background-color: #f44336;
 }
+.navBar {
+  overflow: hidden;
+  background-color: darkred;
+  height: 50px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row; /* Ensure the navigation items are in a row */
+  justify-content: space-around;
+  align-items: center;
+ 
+}
+
+.navBar li {
+  list-style: none;
+}
+
+.navBar li a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 20px;
+}

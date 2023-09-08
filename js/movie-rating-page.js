@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
 document.addEventListener("DOMContentLoaded", function() {
   movieResults.addEventListener("click", function(event) {
     if (event.target.classList.contains("rating-star")) {
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
 
 
 
