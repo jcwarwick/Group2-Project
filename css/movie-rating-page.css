@@ -31,6 +31,13 @@ body{
   padding: 5px;
   margin-top: 5px;
   font-size: 20px;
+  font-family:'Limelight', cursive;
+}
+#oh-button{
+  font-family:'Limelight', cursive;
+}
+.P1{
+  font-family:'Limelight', cursive;
 }
 
 .center-flex {
@@ -65,8 +72,10 @@ body{
 }
 .movie-search {
   padding: 0.5rem;
-  border: 1px solid #ddd;
+  border: 1px solid #000000;
   border-radius: 4px;
+  color: #ffffff;
+  font-family:'Limelight', cursive;
 }
 
 .search-btn {
@@ -75,6 +84,7 @@ body{
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  font-family:'Limelight', cursive;
 }
 
 .search-btn:hover {
@@ -89,6 +99,7 @@ body{
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  font-family:'Limelight', cursive;
 }
 
 .submit-btn:hover {
@@ -110,3 +121,8 @@ body{
 .extended-textarea {
   height: 100px; 
 }
+
+@media screen and (max-width: 768px) {
+  .navBar li a {
+      font-size: 16px; /* Adjust font size for tablets and phones */
+  }}

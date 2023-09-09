@@ -68,3 +68,8 @@ body {
   margin-top: 5px;
   font-size: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .navBar li a {
+      font-size: 16px; /* Adjust font size for tablets and phones */
+  }}

@@ -1,39 +1,33 @@
-
-
-// Function to generate a random drink
-//function generateRandomDrink() {
-    //const randomIndex = Math.floor(Math.random() * snacks.length);
-    //return snacks[randomIndex];
-//}
-
 // DOM elements
 const generateBtn = document.getElementById("generateBtn");
 const resultDiv = document.getElementById("result");
 
-// Event listener for the button click
+generateBtn.addEventListener("click", async () => {
+    // Make the API request to fetch all drinks
+    const url = 'https://the-cocktail-db.p.rapidapi.com/filter.php?a=Alcoholic';
+    const options = {
+        method: 'GET',
+        headers: {
+			'X-RapidAPI-Key': '0578e63d4amshee76984ae253556p1fb441jsn418e7dce4027',
+			'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
+        }
+    };
 
-    
+    try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+		console.log(data)
 
-generateBtn.addEventListener("click", () => {
-    const randomSnack = generateRandomSnack();
-    resultDiv.textContent = `Your random snack is: ${randomSnack}`;
+        if (data.drinks && data.drinks.length > 0) {
+            // Get a random drink from the list
+            const randomIndex = Math.floor(Math.random() * data.drinks.length);
+            const randomDrink = data.drinks[randomIndex].strDrink;
+            resultDiv.textContent = `Your random drink is: ${randomDrink}`;
+        } else {
+            resultDiv.textContent = 'No drinks found.';
+        }
+    } catch (error) {
+        console.error(error);
+        resultDiv.textContent = 'Error occurred while fetching the drink list.';
+    }
 });
-
-
-const url = 'https://the-cocktail-db.p.rapidapi.com/search.php?s=vodka';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '0578e63d4amshee76984ae253556p1fb441jsn418e7dce4027',
-		'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
-	}
-};
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
-
