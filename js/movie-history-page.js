@@ -1,16 +1,31 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // ... (previous code)
 
-var savedReview = JSON.parse(localStorage.getItem("userReview"));
-var savedTemplate = localStorage.getItem('savedTemplateId');
+  // Function to render the saved review data
+  function renderSavedReview() {
+    const savedReviewData = JSON.parse(localStorage.getItem('userReview'));
 
-if (savedReview) {
+    if (savedReviewData) {
+      // Populate the review input with saved data
+      const reviewTextarea = document.getElementById("review");
+      reviewTextarea.value = savedReviewData.review;
 
-  var reviewElement = document.getElementById("review");
-  var movieResults = document.getElementById('movie-results');
+      // Populate the rating stars with saved data
+      const ratingStars = document.querySelectorAll('.rating-star');
+      ratingStars.forEach(function (starButton, index) {
+        if (index < savedReviewData.rating) {
+          starButton.classList.add("starChecked");
+        } else {
+          starButton.classList.remove("starChecked");
+        }
+      });
 
-  reviewElement.textContent = savedReview.reviewTextarea;
-  
-  
-}
+      // Populate the streaming service dropdown with saved data
+      const streamingServiceDropdown = document.getElementById("streaming-service");
+      streamingServiceDropdown.value = savedReviewData.streamingService;
+    }
+  }
 
-
-
+  // Call the function to render saved review data when the page loads
+  renderSavedReview();
+});
