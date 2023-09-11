@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
       if (searchingInput.trim() !== "") {
           window.location.href = `movie-rating-page.html?search=${encodeURIComponent(searchingInput)}`;
       }
+      
+      
   }
 
   searchInput.addEventListener("keydown", function(event) {
