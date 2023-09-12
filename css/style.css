@@ -39,26 +39,13 @@ body {
     width: 800px;
     height: 125px;
     margin: 100px auto;
-    padding: 20px;
+    padding: 20px 150px;
     background-color: #b8b8b8;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-
+   
 }
 
-.movie-form {
-    display: inline-block;
-}
-
-.movie-search {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 400px;
-    background-color: #000000;
-    color: #fff;
-    font-family: 'Limelight', cursive;
-}
 
 .search-btn {
     background-color: darkred;
@@ -69,6 +56,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 500px;
+    
 }
 
 .search-btn:hover {
