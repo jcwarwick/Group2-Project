@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
   }
-
+fetchAndRenderMovies()
   // add event listener for the "Search Movies!" button
   searchButton.addEventListener("click", function (event) {
     event.preventDefault();
