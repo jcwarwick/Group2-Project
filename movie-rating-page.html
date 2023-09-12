@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Oh, I've seen that - Movie Rating App</title>
     <link rel="stylesheet" href="./css/movie-rating-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
 </head>
+</head>
+
 <body class="bg-crimson-red">
 
 
@@ -22,11 +26,14 @@
 
     <header class="bg-charcoal text-white text-center py-4">
         <div class="bg-red-500 rounded-full py-1 px-4 inline-block">
-            <h1 class="text-2xl font-semibold">Oh,</h1>
+            <h1 id="oh-button" class="text-2xl font-semibold">Oh,</h1>
         </div>
-        <p class="mt-2">I've seen that - Rate and review your favorite movies!</p>
+        <div class="P1">
+            <p class="mt-2">~I've seen that~</p>
+            <p>Rate and review your favorite movies!</p>
+        </div>
     </header>
-    
+
     <form class="movie-form">
         <input type="text" id="searching" placeholder="Enter a Movie" class="movie-search">
         <button type="button" id="search-btn" class="search-btn">Search Movies!</button>
@@ -36,51 +43,74 @@
     <main class="max-w-6xl mx-auto p-4">
         <section class="flex flex-wrap gap-4 center-flex" id="movie-results">
             <template id="movie-template">
-                <div class="bg-black text-white p-4 rounded-md shadow-md w-full md:w-1/2 lg:w-1/3 movie-form" id="savedTemplate">
+                <div class="bg-black text-white p-4 rounded-md shadow-md w-full md:w-1/2 lg:w-1/3 movie-form"
+                    id="savedTemplate">
                     <img src="" alt="" class="max-w-full h-auto">
                     <h2 class="text-lg font-semibold mt-2"></h2>
                     <p class="mt-1">Release Year: </p>
                     <div class="flex items-center mt-2">
                         <span class="mr-1">Your Rating:</span>
                         <div class="flex space-x-1">
-                          <button class="rating-star px-2 py-1 rounded-md" data-value="1">
-                              <i class="fas fa-star"></i>
-                          </button>
-                          <button class="rating-star px-2 py-1 rounded-md" data-value="2">
-                              <i class="fas fa-star"></i>
-                          </button>
-                          <button class="rating-star px-2 py-1 rounded-md" data-value="3">
-                              <i class="fas fa-star"></i>
-                          </button>
-                          <button class="rating-star px-2 py-1 rounded-md" data-value="4">
-                              <i class="fas fa-star"></i>
-                          </button>
-                          <button class="rating-star px-2 py-1 rounded-md" data-value="5">
-                              <i class="fas fa-star"></i>
-                          </button>
+                            <button class="rating-star px-2 py-1 rounded-md" data-value="1">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="rating-star px-2 py-1 rounded-md" data-value="2">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="rating-star px-2 py-1 rounded-md" data-value="3">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="rating-star px-2 py-1 rounded-md" data-value="4">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="rating-star px-2 py-1 rounded-md" data-value="5">
+                                <i class="fas fa-star"></i>
+                            </button>
                         </div>
-                      </div>
-                      <button type="button" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md wLater-btn" id="watch-later">Watch Later</button>
-                      <section class="mt-4 bg-black text-white p-4 rounded-md shadow-md">
-                      <h2 class="text-lg font-semibold">Write a Review</h2>
-                      
-                    <form class="mt-2 submit-form">
-                          <label class="block mt-2" for="review">Your Review:</label>
-                          <input id="review" name="review" class="w-full px-3 py-2 border rounded-md extended-textarea">
-                          <button type="button" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md submit-btn" id="submit-review">Submit Review</button>
-                    </form>
-                      
-                      
+                    </div>
+                    <button type="button" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md wLater-btn"
+                        id="watch-later">Watch Later</button>
+
+                    <section class="mt-4 bg-black text-white p-4 rounded-md shadow-md">
+                        <h2 class="text-lg font-semibold">Write a Review</h2>
+
+                        <form class="mt-2 submit-form">
+                            <label class="block mt-2" for="review">Your Review:</label>
+                            <input id="review" name="review"
+                                class="w-full px-3 py-2 border rounded-md extended-textarea">
+                                
+                                <h2>Select a Streaming Service:</h2>
+
+                        <select id="streaming-service">
+                            <option value="netflix">Netflix</option>
+                            <option value="amazon-prime">Amazon Prime Video</option>
+                            <option value="hulu">Hulu</option>
+                            <option value="disney-plus">Disney+</option>
+                            <option value="hbo-max">HBO Max</option>
+                            <option value="apple-tv-plus">Apple TV+</option>
+                            <option value="peacock">Peacock</option>
+                            <option value="paramount-plus">Paramount+</option>
+                            <option value="Crunchy-Roll">Crunchy Roll</option>
+                        </select>
+
+
+                            <button type="button" class="mt-2 bg-red-900 text-white px-3 py-1 rounded-md submit-btn"
+                                id="submit-review">Submit Review</button>
+                        </form>
+
+                        
+
                 </div>
             </template>
-            
+
         </section>
-        
+
     </main>
-    
+
     <footer class="text-center py-4">
         <p>&copy; 2023 Oh, I've seen that App</p>
     </footer>
     <script src="./js/movie-rating-page.js"></script>
 </body>
+
 </html>
