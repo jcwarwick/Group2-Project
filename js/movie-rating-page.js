@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const submitReviewBtn = movieBox.querySelector('.submit-btn');
     submitReviewBtn.addEventListener("click", function (event) {
       event.preventDefault();
-      const reviewTextarea = movieBox.querySelector("#review");
-      const ratingStars = movieBox.querySelectorAll('.rating-star');
-      const streamingServiceDropdown = movieBox.querySelector("#streaming-service");
+      const reviewTextarea = document.querySelector("#review");
+      const ratingStars = document.querySelectorAll('.rating-star');
+      const streamingServiceDropdown = document.querySelector("#streaming-service");
 
       // Get the selected rating
       let selectedRating = 0;
@@ -34,16 +34,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      // Save all information to local storage
-      const reviewData = {
-        movieTitle: name,
-        review: reviewTextarea.value,
-        rating: selectedRating,
-        streamingService: streamingServiceDropdown.value,
-      };
-
-      localStorage.setItem('userReview', JSON.stringify(reviewData));
-    });
+         // Save all information to local storage
+         const reviewData = {
+          movieTitle: name,
+          review: reviewTextarea.value, // Save the review text
+          rating: selectedRating, // Save the rating
+          streamingService: streamingServiceDropdown.value, // Save the streaming service
+        };
+  
+        // Store the review data in an array (you can append to an existing array if needed)
+        const reviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+        reviews.push(reviewData);
+        localStorage.setItem('userReviews', JSON.stringify(reviews));
+      });
+  
 
     // Add event listener for rating stars
     const ratingStars = movieBox.querySelectorAll('.rating-star');
@@ -85,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Add event listener for the "Search Movies!" button
+  // add event listener for the "Search Movies!" button
   searchButton.addEventListener("click", function (event) {
     event.preventDefault();
     const searchingInput = searchInput.value;
