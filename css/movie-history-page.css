@@ -64,6 +64,24 @@ body {
       justify-content: center;
       flex-wrap: wrap;
     }
+
+    h3, p {
+      padding: 20px, 150px;
+      border-radius: 2px;
+      border-color: darkred;
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 35px;
+      padding-top: 15px;
+    }
+
+    p {
+      font-size: 25px;
+    }
   
 
 
